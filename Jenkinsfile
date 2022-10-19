@@ -5,14 +5,14 @@ pipeline {
     environment {
         imageName = "test102"
         registryCredentials = "nexus"
-        registry = "54.161.56.159:8085/"
+        registry = "44.201.102.100:8085/"
         dockerImage = ''
     }
     
     stages {
         stage('Git Code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/omersaif/final101.git']]])                   }
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/omersaif/web-app.git']]])                   }
         }
         stage('Sonarqube') {
                
